@@ -8,8 +8,8 @@ por Seletor: getElementBySelector()
 */
 
 let email = document.querySelector("#email")
-let assunto = document.querySelector("#assunto")
-let assunto = document.querySelector("#mensagem")
+let assunto = document.querySelector("#exampleFormControlSelect1")
+let assunto = document.querySelector("#exampleFormControlTextarea1")
 let nomeOk = false
 let emailOk = false
 let assuntoOk = false
@@ -21,14 +21,15 @@ mensagem.style.width = "100%"
 
 
 function validaEmail() {
-    let txtEmail = document.querySelector("#txtEmail")
+    alert("oi")
+   /*  let txtEmail = document.querySelector("#txtEmail")
     if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
         txtEmail.innerHTML = "E-mail inválido."
         txtEmail.style.backgroundColor = "red"
     } else {
         txtEmail.innerHTML = ""
         emailOk = true
-    }
+    } */
 }
 
 function validaAssunto() {
