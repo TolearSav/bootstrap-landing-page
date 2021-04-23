@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Musicalist</title>
+    <!--Link para pegar o estilo dos servidores do Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <style>
         .tm-social {
             width: 50px;
@@ -26,10 +32,6 @@
             background: linear-gradient(324deg, rgb(25, 25, 26) 0%, rgb(35, 158, 167) 45%, rgb(26, 26, 27) 100%);
         }
     </style>
-    <title>Musicalist</title>
-    <!--Link para pegar o estilo dos servidores do Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
@@ -206,32 +208,36 @@
 
             <div class="row d-flex align-items-center">
                 <div class="col-md-12">
-                    <form id="gradient1">
+                    <div id="gradient1">
                         <div class="form-group">
                             <label for="email" class="text-light">Endereço de email</label>
-                            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" onkeyup="validaEmail()"/>
+                            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com"
+                                onkeyup="validaEmail()" />
+                            <p id="txtEmail"></p>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1" class="text-light">Assunto</label>
-                            <select class="form-control" id="exampleFormControlSelect1" onkeyup="validaAssunto()">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label for="assunto" class="text-light">Assunto</label>
+                            <select class="form-control" id="assunto" onchange="validaAssunto(event)">
+                                <option value="">Escolha um assunto</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
+                            <p id="txtAssunto"></p>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="text-light">Mensagem</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" id="txtAssunto" rows="3"
-                                onkeyup="validaMensagem()"></textarea>
+                            <label for="msg" class="text-light">Mensagem</label>
+                            <textarea class="form-control" id="msg" rows="3" onkeyup="validaMensagem()"></textarea>
+                            <p id="txtMensagem"></p>
                         </div>
 
                         <div class="form-group d-flex justify-content-end">
-                            <button class="btn btn-outline-info">Enviar</button>
+                            <button class="btn btn-outline-info" onclick="enviar()">Enviar</button>
                         </div>
 
-                    </form>
+                    </div>
                 </div>
             </div>
 
@@ -265,8 +271,11 @@
 
     </footer>
     <!--/Rodapé-->
+
+
     <script src="./assets/js/script.js"></script>
-    <!--Scripts necessários para utilização dos códigos JS do Bootstrap-->
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -275,7 +284,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
 </body>
 

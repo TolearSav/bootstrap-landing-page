@@ -8,36 +8,38 @@ por Seletor: getElementBySelector()
 */
 
 let email = document.querySelector("#email")
-let assunto = document.querySelector("#exampleFormControlSelect1")
-let assunto = document.querySelector("#exampleFormControlTextarea1")
-let nomeOk = false
+let assunto = document.querySelector("#assunto")
+let mensagem = document.querySelector("#msg")
 let emailOk = false
 let assuntoOk = false
 let mensagemOk = false
+let assuntoValue = ''
 
 email.style.width = "100%"
 assunto.style.width = "100%"
 mensagem.style.width = "100%"
 
-
 function validaEmail() {
-    alert("oi")
-   /*  let txtEmail = document.querySelector("#txtEmail")
+
+    let txtEmail = document.querySelector("#txtEmail")
     if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
         txtEmail.innerHTML = "E-mail inválido."
         txtEmail.style.backgroundColor = "red"
+        emailOk = false
     } else {
         txtEmail.innerHTML = ""
         emailOk = true
-    } */
+    }
 }
 
-function validaAssunto() {
+function validaAssunto(event) {
     let txtAssunto = document.querySelector("#txtAssunto")
-    if (assunto.value.length >= 100) {
-        txtAssunto.innerHTML = "Seu texto ultrapassou o limite de 100 caracteres."
+    assuntoValue = event.target.value
+    if (assuntoValue == '') {
+        txtAssunto.innerHTML = "Escolha um assunto"
         txtAssunto.style.backgroundColor = "red"
         txtAssunto.style.display = "block"
+        assuntoOk = false
     } else {
         txtAssunto.style.display = "none"
         assuntoOk = true
@@ -50,6 +52,7 @@ function validaMensagem() {
         txtMensagem.innerHTML = "Seu texto ultrapassou o limite de 100 caracteres."
         txtMensagem.style.backgroundColor = "red"
         txtMensagem.style.display = "block"
+        mensagemOk = false
     } else {
         txtMensagem.style.display = "none"
         mensagemOk = true
@@ -57,7 +60,7 @@ function validaMensagem() {
 }
 
 function enviar() {
-    if (emailOk == true && assuntoOk == true && mensagemOk == true) {
+    if (emailOk && assuntoValue != '' && mensagemOk) {
         alert("Formulário enviado com sucesso!")
     } else {
         alert("Preencha o formulário antes de enviar!")
